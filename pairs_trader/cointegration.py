@@ -71,7 +71,7 @@ def _half_life(residuals: np.ndarray) -> float:
     return float(-np.log(2) / np.log(1 + phi))
 
 
-def test_pair(
+def eg_test(
     prices: pd.DataFrame,
     ticker_x: str,
     ticker_y: str,
@@ -160,7 +160,7 @@ def screen_universe(
         for j in range(i + 1, n):
             tx, ty = tickers[i], tickers[j]
             try:
-                result = test_pair(prices, tx, ty)
+                result = eg_test(prices, tx, ty)
             except Exception:
                 continue
 
